@@ -17,6 +17,7 @@ or add `ctlsettings==0.1.0` to your `requirements.txt`.
 
 The following libraries are used in some way, so they'll need to be installed:
 
+* django-cas-ng
 * django-debug-toolbar
 * coverage
 * django-smoketest
