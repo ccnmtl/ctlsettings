@@ -85,14 +85,18 @@ def common(**kwargs):
     MIDDLEWARE = [
         'django_statsd.middleware.GraphiteRequestTimingMiddleware',
         'django_statsd.middleware.GraphiteMiddleware',
-        'django.middleware.common.CommonMiddleware',
-        'django.contrib.sessions.middleware.SessionMiddleware',
-        'django.contrib.auth.middleware.AuthenticationMiddleware',
-        'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
-        'django.contrib.messages.middleware.MessageMiddleware',
-        'impersonate.middleware.ImpersonateMiddleware',
+
         'django.middleware.security.SecurityMiddleware',
-        'django.middleware.clickjacking.XFrameOptionsMiddleware'
+        'django.contrib.sessions.middleware.SessionMiddleware',
+        'django.middleware.common.CommonMiddleware',
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
+        'django.contrib.messages.middleware.MessageMiddleware',
+        'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+        'impersonate.middleware.ImpersonateMiddleware',
+        'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+
+        'django_cas_ng.middleware.CASMiddleware',
     ]
 
     ROOT_URLCONF = project + '.urls'
@@ -110,6 +114,7 @@ def common(**kwargs):
         'smoketest',
         'gunicorn',
         'impersonate',
+        'django_cas_ng',
     ]
 
     INTERNAL_IPS = ['127.0.0.1']
@@ -133,9 +138,21 @@ def common(**kwargs):
 
     AUTHENTICATION_BACKENDS = [
         'django.contrib.auth.backends.ModelBackend',
+        'django_cas_ng.backends.CASBackend',
     ]
 
-    CAS_BASE = "https://cas.columbia.edu/"
+    CAS_SERVER_URL = 'https://cas.columbia.edu/cas/'
+    CAS_VERSION = '3'
+    CAS_ADMIN_REDIRECT = False
+
+    # Translate CUIT's CAS user attributes to the Django user model.
+    # https://cuit.columbia.edu/content/cas-3-ticket-validation-response
+    CAS_APPLY_ATTRIBUTES_TO_USER = True
+    CAS_RENAME_ATTRIBUTES = {
+        'givenName': 'first_name',
+        'lastName': 'last_name',
+        'mail': 'email',
+    }
 
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')
     SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
