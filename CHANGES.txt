@@ -1,3 +1,7 @@
+0.1.1
+====================
+* django-storages: remove deprecated AWS_PRELOAD_METADATA setting
+
 0.1.0 (2023-02-17)
 ====================
 Initial release

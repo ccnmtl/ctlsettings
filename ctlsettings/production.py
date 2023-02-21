@@ -36,7 +36,6 @@ def common(**kwargs):
         AWS_S3_OBJECT_PARAMETERS = {
             'ACL': 'public-read',
         }
-        AWS_PRELOAD_METADATA = True
         STATICFILES_STORAGE = 'cacheds3storage.CompressorS3BotoStorage'
         if cloudfront:
             AWS_S3_CUSTOM_DOMAIN = cloudfront + '.cloudfront.net'
