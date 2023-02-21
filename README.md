@@ -26,7 +26,6 @@ The following libraries are used in some way, so they'll need to be installed:
 * django-storages
 * django-impersonate
 * boto3
-* django-cacheds3storage
 * sentry-sdk
 * statsd
 * gunicorn

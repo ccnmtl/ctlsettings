@@ -40,7 +40,9 @@ def common(**kwargs):
         AWS_S3_OBJECT_PARAMETERS = {
             'ACL': 'public-read',
         }
-        STATICFILES_STORAGE = 'cacheds3storage.CompressorS3BotoStorage'
+        DEFAULT_FILE_STORAGE = 'ctlsettings.storages.UploadsStorage'
+        STATICFILES_STORAGE = 'ctlsettings.storages.MediaStorage'
+
         if cloudfront:
             AWS_S3_CUSTOM_DOMAIN = cloudfront + '.cloudfront.net'
             S3_URL = 'https://%s/' % AWS_S3_CUSTOM_DOMAIN
@@ -49,7 +51,7 @@ def common(**kwargs):
             S3_URL = 'https://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
             STATIC_URL = ('https://%s.s3.amazonaws.com/media/'
                           % AWS_STORAGE_BUCKET_NAME)
-        DEFAULT_FILE_STORAGE = 'cacheds3storage.MediaRootS3BotoStorage'
+
         MEDIA_URL = S3_URL + 'uploads/'
         AWS_QUERYSTRING_AUTH = False
     else:
