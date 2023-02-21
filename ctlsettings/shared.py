@@ -50,6 +50,7 @@ def common(**kwargs):
     TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
     TIME_ZONE = 'America/New_York'
+    USE_TZ = True
     LANGUAGE_CODE = 'en-us'
     SITE_ID = 1
     USE_I18N = False
