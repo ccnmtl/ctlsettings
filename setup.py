@@ -18,7 +18,6 @@ setup(
         'sentry-sdk',
         'django-storages',
         'boto3',
-        'django-cacheds3storage',
         'statsd',
         'gunicorn',
         'django-impersonate',
