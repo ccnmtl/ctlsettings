@@ -9,6 +9,7 @@ setup(
     description='Columbia CTL common Django base settings',
     long_description='common settings we use across all our projects',
     install_requires = [
+        'django-cas-ng',
         'django-debug-toolbar',
         'coverage',
         'django-smoketest',
