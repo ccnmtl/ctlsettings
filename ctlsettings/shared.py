@@ -146,6 +146,7 @@ def common(**kwargs):
     CAS_SERVER_URL = 'https://cas.columbia.edu/cas/'
     CAS_VERSION = '3'
     CAS_ADMIN_REDIRECT = False
+    CAS_MAP_AFFILIATIONS = True
 
     # Translate CUIT's CAS user attributes to the Django user model.
     # https://cuit.columbia.edu/content/cas-3-ticket-validation-response
