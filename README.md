@@ -37,22 +37,22 @@ to make use of: `shared`, `staging`, and `production`.
 
 In your `settings_shared.py` you will want to do something like:
 
-	import os.path
-	from ctlsettings.shared import common
+    import os.path
+    from ctlsettings.shared import common
 
-	project = 'yourapp'
-	base = os.path.dirname(__file__)
+    project = 'yourapp'
+    base = os.path.dirname(__file__)
 
-	locals().update(common(project=project, base=base))
+    locals().update(common(project=project, base=base))
 
     # which apps should jenkins include in coverage reports?
-	PROJECT_APPS = [
-		'yourapp.main',
-	]
+    PROJECT_APPS = [
+        'yourapp.main',
+    ]
 
-	INSTALLED_APPS += [  # noqa
-		'yourapp.main',
-	]
+    INSTALLED_APPS += [  # noqa
+        'yourapp.main',
+    ]
 
 
 Most of the magic is on the `locals().update(...)` line. That's where
@@ -81,26 +81,26 @@ modify this way to get it to ignore it.
 You'll do almost the same thing for your `settings_staging.py` and
 `settings_production.py`:
 
-	from myapp.settings_shared import *
-	from ctlsettings.staging import common
-	import os
+    from myapp.settings_shared import *
+    from ctlsettings.staging import common
+    import os
 
-	project = 'yourapp'
-	base = os.path.dirname(__file__)
+    project = 'yourapp'
+    base = os.path.dirname(__file__)
 
-	locals().update(
-		common(
-			project=project,
-			base=base,
-			STATIC_ROOT=STATIC_ROOT,
-			INSTALLED_APPS=INSTALLED_APPS,
-			cloudfront='some-cloudfront-id',
-		))
+    locals().update(
+        common(
+            project=project,
+            base=base,
+            STATIC_ROOT=STATIC_ROOT,
+            INSTALLED_APPS=INSTALLED_APPS,
+            cloudfront='some-cloudfront-id',
+        ))
 
-	try:
-		from myapp.local_settings import *
-	except ImportError:
-		pass
+    try:
+        from myapp.local_settings import *
+    except ImportError:
+        pass
 
 (and the same thing for `settings_production.py`, but with `from
 ctlsettings.production import common` instead.)
