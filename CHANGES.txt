@@ -1,3 +1,7 @@
+0.3.0
+====================
+* Added sentry init to default staging/production config
+
 0.2.0 (2023-02-21)
 ====================
 * django-storages: remove deprecated AWS_PRELOAD_METADATA setting
