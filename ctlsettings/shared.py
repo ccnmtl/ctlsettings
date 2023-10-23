@@ -148,6 +148,10 @@ def common(**kwargs):
     CAS_ADMIN_REDIRECT = False
     CAS_MAP_AFFILIATIONS = True
 
+    # Force the service url to always target HTTPS.
+    # https://djangocas.dev/docs/latest/configuration.html#cas-force-ssl-service-url-optional
+    CAS_FORCE_SSL_SERVICE_URL = True
+
     # Translate CUIT's CAS user attributes to the Django user model.
     # https://cuit.columbia.edu/content/cas-3-ticket-validation-response
     CAS_APPLY_ATTRIBUTES_TO_USER = True
