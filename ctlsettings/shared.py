@@ -1,5 +1,17 @@
 import os.path
 import sys
+import requests
+
+
+def get_ec2_instance_ip():
+    url = "http://169.254.169.254/latest/meta-data/local-ipv4"
+    try:
+        response = requests.get(url, timeout=2)
+        if response.status_code == 200:
+            return response.text
+    except requests.exceptions.RequestException:
+        return ""
+    return ""
 
 
 def common(**kwargs):
@@ -18,6 +30,10 @@ def common(**kwargs):
         'localhost',
         '127.0.0.1',
     ]
+
+    public_ip = get_ec2_instance_ip()
+    if public_ip:
+        ALLOWED_HOSTS += [public_ip]
 
     DATABASES = {
         'default': {
