@@ -18,6 +18,7 @@ setup(
         'sentry-sdk',
         'django-storages',
         'boto3',
+        'requests',
         'statsd',
         'gunicorn',
         'django-impersonate',
@@ -26,5 +27,5 @@ setup(
     license = 'GPL-3.0-or-later',
     platforms = ['any'],
     package_data = {'' : ['*.*']},
-    packages=['ctlsettings'],
+    packages = ['ctlsettings'],
 )
