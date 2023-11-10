@@ -26,6 +26,7 @@ def common(**kwargs):
 
     ALLOWED_HOSTS = [
         '.ctl.columbia.edu',
+        '.stage.ctl.columbia.edu',
         '.ccnmtl.columbia.edu',
         'localhost',
         '127.0.0.1',
