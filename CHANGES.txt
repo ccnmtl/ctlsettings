@@ -1,6 +1,11 @@
-0.3.0
+0.3.0 (2023-12-08)
 ====================
+* Use CAS_MAP_AFFILIATIONS=True by default
+* Updated README
 * Added sentry init to default staging/production config
+* Added CAS_CAS_FORCE_SSL_SERVICE_URL setting
+* Added Dynamic IP Lookup
+* 'stage' added to ALLOWED_HOSTS
 
 0.2.0 (2023-02-21)
 ====================
