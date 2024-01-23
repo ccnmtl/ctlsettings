@@ -36,6 +36,10 @@ def common(**kwargs):
     if public_ip:
         ALLOWED_HOSTS += [public_ip]
 
+    CSRF_TRUSTED_ORIGINS = [
+        'https://*.ctl.columbia.edu',
+    ]
+
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
