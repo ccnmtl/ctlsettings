@@ -86,7 +86,9 @@ def common(**kwargs):
         'handlers': {
             'file': {
                 'level': 'INFO',
-                'class': 'logging.FileHandler',
+                'class': 'logging.handlers.RotatingFileHandler',
+                'backupCount': 4,
+                'maxBytes': 10*1024*1024,
                 'filename': '/var/log/django/' + project + '.log',
                 'formatter': 'timestamped',
             },
