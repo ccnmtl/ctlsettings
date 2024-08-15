@@ -1,4 +1,4 @@
-0.3.3
+0.3.3 (2024-08-15)
 ====================
 * Added token process to get_ec2_instance_ip()
 
