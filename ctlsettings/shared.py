@@ -6,27 +6,27 @@ import requests
 def get_ec2_instance_ip():
     # URL to retrieve the token for IMDSv2
     token_url = "http://169.254.169.254/latest/api/token"
-    
     # URL to get the local IPv4 address
     ipv4_url = "http://169.254.169.254/latest/meta-data/local-ipv4"
-    
     try:
         # Get the token required for accessing IMDSv2
-        token_response = requests.put(token_url, headers={"X-aws-ec2-metadata-token-ttl-seconds": "21600"}, timeout=2)
+        token_response = requests.put(
+                token_url, 
+                headers={"X-aws-ec2-metadata-token-ttl-seconds": "21600"}, 
+                timeout=2
+            )
         if token_response.status_code == 200:
             token = token_response.text
         else:
             return ""  # Token request failed
-        
+
         # Use the token to access the IPv4 metadata
         response = requests.get(ipv4_url, headers={"X-aws-ec2-metadata-token": token}, timeout=2)
         if response.status_code == 200:
             return response.text
     except requests.exceptions.RequestException:
         return ""
-    
     return ""
-
 
 def common(**kwargs):
     # required args
