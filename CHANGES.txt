@@ -1,3 +1,7 @@
+0.3.3
+====================
+* Added token process to get_ec2_instance_ip()
+
 0.3.2 (2024-04-16)
 ====================
 * Added CSRF_TRUSTED_ORIGINS config for Django >= 4.0
