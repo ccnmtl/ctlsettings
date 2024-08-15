@@ -11,8 +11,8 @@ def get_ec2_instance_ip():
     try:
         # Get the token required for accessing IMDSv2
         token_response = requests.put(
-                token_url, 
-                headers={"X-aws-ec2-metadata-token-ttl-seconds": "21600"}, 
+                token_url,
+                headers={"X-aws-ec2-metadata-token-ttl-seconds": "21600"},
                 timeout=2
             )
         if token_response.status_code == 200:
@@ -21,12 +21,14 @@ def get_ec2_instance_ip():
             return ""  # Token request failed
 
         # Use the token to access the IPv4 metadata
-        response = requests.get(ipv4_url, headers={"X-aws-ec2-metadata-token": token}, timeout=2)
+        response = requests.get(
+            ipv4_url, headers={"X-aws-ec2-metadata-token": token}, timeout=2)
         if response.status_code == 200:
             return response.text
     except requests.exceptions.RequestException:
         return ""
     return ""
+
 
 def common(**kwargs):
     # required args
