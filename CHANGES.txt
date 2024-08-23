@@ -1,3 +1,7 @@
+0.3.4
+====================
+* Introduced init_sentry function for staging and production.
+
 0.3.3 (2024-08-15)
 ====================
 * Added token process to get_ec2_instance_ip()

@@ -14,7 +14,6 @@ def common(**kwargs):
     s3static = kwargs.get('s3static', True)
     cloudfront = kwargs.get('cloudfront', None)
     s3prefix = kwargs.get('s3prefix', 'ctl')
-    sentry_dsn = kwargs.get('sentry_dsn', None)
 
     DEBUG = False
     STAGING_ENV = True
@@ -30,15 +29,6 @@ def common(**kwargs):
             'ATOMIC_REQUESTS': True,
         }
     }
-
-    if sentry_dsn and \
-        ('migrate' not in sys.argv) and \
-            ('collectstatic' not in sys.argv):
-        sentry_sdk.init(
-            dsn=sentry_dsn,  # noqa: F405
-            integrations=[DjangoIntegration()],
-            debug=True,
-        )
 
     STATSD_PREFIX = project + "-staging"
 
@@ -103,3 +93,14 @@ def common(**kwargs):
     }
 
     return locals()
+
+
+def init_sentry(sentry_dsn: str) -> None:
+    if sentry_dsn and \
+        ('migrate' not in sys.argv) and \
+            ('collectstatic' not in sys.argv):
+        sentry_sdk.init(
+            dsn=sentry_dsn,
+            integrations=[DjangoIntegration()],
+            debug=True,
+        )
