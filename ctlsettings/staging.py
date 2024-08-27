@@ -18,18 +18,6 @@ def common(**kwargs):
     DEBUG = False
     STAGING_ENV = True
 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': project,
-            'HOST': '',
-            'PORT': 6432,
-            'USER': '',
-            'PASSWORD': '',
-            'ATOMIC_REQUESTS': True,
-        }
-    }
-
     STATSD_PREFIX = project + "-staging"
 
     MEDIA_ROOT = '/var/www/' + project + '/uploads/'
