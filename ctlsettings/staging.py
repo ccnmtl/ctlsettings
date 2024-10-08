@@ -92,4 +92,5 @@ def init_sentry(sentry_dsn: str) -> None:
             integrations=[DjangoIntegration()],
             debug=True,
             environment='staging',
+            traces_sample_rate=1.0,
         )

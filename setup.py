@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='ctlsettings',
-    version='0.3.4',
+    version='0.3.5',
     author='Columbia University Center for Teaching and Learning',
     author_email='ctl-dev@columbia.edu',
     url='https://github.com/ccnmtl/ctlsettings',
