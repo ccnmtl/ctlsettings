@@ -98,4 +98,5 @@ def init_sentry(sentry_dsn: str) -> None:
         sentry_sdk.init(
             dsn=sentry_dsn,
             integrations=[DjangoIntegration()],
+            environment='production',
         )
