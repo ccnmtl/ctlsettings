@@ -1,3 +1,7 @@
+0.3.5
+====================
+* Updated sentry init to include environment tag.
+
 0.3.4 (2024-08-23)
 ====================
 * Introduced init_sentry function for staging and production.

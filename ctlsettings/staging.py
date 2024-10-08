@@ -91,4 +91,5 @@ def init_sentry(sentry_dsn: str) -> None:
             dsn=sentry_dsn,
             integrations=[DjangoIntegration()],
             debug=True,
+            environment='staging',
         )
