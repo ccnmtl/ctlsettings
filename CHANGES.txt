@@ -1,4 +1,4 @@
-0.3.6
+0.3.6 (2024-10-09)
 ====================
 * Added ENVIRONMENT django setting, denoting either 'staging' or
   'production'
