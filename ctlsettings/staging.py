@@ -17,6 +17,7 @@ def common(**kwargs):
 
     DEBUG = False
     STAGING_ENV = True
+    ENVIRONMENT = 'staging'
 
     STATSD_PREFIX = project + "-staging"
 

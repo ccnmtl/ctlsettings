@@ -16,6 +16,7 @@ def common(**kwargs):
     s3prefix = kwargs.get('s3prefix', 'ctl')
 
     DEBUG = False
+    ENVIRONMENT = 'production'
 
     DATABASES = {
         'default': {
