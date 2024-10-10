@@ -8,4 +8,5 @@ def env(request):
     return {
         'STAGING_ENV': getattr(settings, 'STAGING_ENV', False),
         'ENVIRONMENT': getattr(settings, 'ENVIRONMENT', 'development'),
+        'SENTRY_KEY': getattr(settings, 'SENTRY_KEY', None),
     }

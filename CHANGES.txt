@@ -2,6 +2,9 @@
 ====================
 * Added a custom context processor to make settings available in
   templates.
+* Added 'testing' environment when running tests.
+* Added sentry_js.html template partial, to unify the code for this
+  setup.
 
 0.3.6 (2024-10-09)
 ====================

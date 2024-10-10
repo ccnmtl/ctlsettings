@@ -79,6 +79,7 @@ def common(**kwargs):
     }
 
     if 'test' in sys.argv or 'jenkins' in sys.argv:
+        ENVIRONMENT = 'testing'
         DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.sqlite3',
@@ -110,7 +111,7 @@ def common(**kwargs):
         {
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
             'DIRS': [
-                os.path.join(base, "templates"),
+                os.path.join(base, 'templates'),
             ],
             'APP_DIRS': True,
             'OPTIONS': {
