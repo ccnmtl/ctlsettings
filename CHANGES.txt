@@ -1,4 +1,4 @@
-0.3.7
+0.4.0 (2024-10-10)
 ====================
 * Added a custom context processor to make settings available in
   templates.
