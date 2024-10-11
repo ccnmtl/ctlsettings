@@ -166,6 +166,7 @@ def common(**kwargs):
         'gunicorn',
         'impersonate',
         'django_cas_ng',
+        'ctlsettings',
     ]
 
     INTERNAL_IPS = ['127.0.0.1']
