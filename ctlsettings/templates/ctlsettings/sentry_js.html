@@ -9,12 +9,12 @@
         {% if request.user.is_anonymous %}
         Sentry.setUser({
             email: 'none',
-            id: 'anonymous'
+            username: 'anonymous'
         });
         {% else %}
         Sentry.setUser({
             email: '{{ request.user.email }}',
-            id: '{{ request.user.username }}'
+            username: '{{ request.user.username }}'
         });
         {% endif %}
     };
