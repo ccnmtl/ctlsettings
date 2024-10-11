@@ -6,17 +6,21 @@
             environment: '{{ ENVIRONMENT }}'
         });
 
-        {% if request.user.is_anonymous %}
-        Sentry.setUser({
-            email: 'none',
-            username: 'anonymous'
+        Sentry.onLoad(function() {
+            const client = Sentry.getClient();
+
+            {% if request.user.is_anonymous %}
+            client.setUser({
+                email: 'none',
+                username: 'anonymous'
+            });
+            {% else %}
+            client.setUser({
+                email: '{{ request.user.email }}',
+                username: '{{ request.user.username }}'
+            });
+            {% endif %}
         });
-        {% else %}
-        Sentry.setUser({
-            email: '{{ request.user.email }}',
-            username: '{{ request.user.username }}'
-        });
-        {% endif %}
     };
 </script>
 
