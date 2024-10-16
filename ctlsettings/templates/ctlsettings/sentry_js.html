@@ -3,23 +3,21 @@
 <script>
     window.sentryOnLoad = function() {
         Sentry.init({
-            environment: '{{ ENVIRONMENT }}'
-        });
+            environment: '{{ ENVIRONMENT }}',
 
-        Sentry.onLoad(function() {
-            const client = Sentry.getClient();
-
-            {% if request.user.is_anonymous %}
-            client.setUser({
-                email: 'none',
-                username: 'anonymous'
-            });
-            {% else %}
-            client.setUser({
-                email: '{{ request.user.email }}',
-                username: '{{ request.user.username }}'
-            });
+            {% if request and request.user %}
+            initialScope: {
+                user: {
+                    {% if request.user.is_anonymous %}
+                    username: 'anonymous'
+                    {% else %}
+                    email: '{{ request.user.email }}',
+                    username: '{{ request.user.username }}'
+                    {% endif %}
+                }
+            }
             {% endif %}
+
         });
     };
 </script>
