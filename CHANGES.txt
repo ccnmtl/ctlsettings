@@ -1,4 +1,4 @@
-0.4.3
+0.4.3 (2024-10-16)
 ====================
 * Updated sentry-js config again to be more failsafe, and also
   configure user data in initialScope on initialization.
