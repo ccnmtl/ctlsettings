@@ -8,6 +8,7 @@ setup(
     url='https://github.com/ccnmtl/ctlsettings',
     description='Columbia CTL common Django base settings',
     long_description='common settings we use across all our projects',
+    long_description_content_type='text/markdown',
     install_requires=[
         'django-cas-ng',
         'django-debug-toolbar',
