@@ -42,8 +42,14 @@ def common(**kwargs):
         AWS_S3_OBJECT_PARAMETERS = {
             'ACL': 'public-read',
         }
-        DEFAULT_FILE_STORAGE = 'ctlsettings.storages.UploadsStorage'
-        STATICFILES_STORAGE = 'ctlsettings.storages.MediaStorage'
+        STORAGES = {
+            'default': {
+                'BACKEND': 'ctlsettings.storages.UploadsStorage',
+            },
+            'staticfiles': {
+                'BACKEND': 'ctlsettings.storages.MediaStorage',
+            },
+        }
 
         if cloudfront:
             AWS_S3_CUSTOM_DOMAIN = cloudfront + '.cloudfront.net'
