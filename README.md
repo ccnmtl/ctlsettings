@@ -19,7 +19,6 @@ The following libraries are used in some way, so they'll need to be installed:
 
 * django-cas-ng
 * django-debug-toolbar
-* coverage
 * django-smoketest
 * django-extensions
 * django-statsd-mozilla
@@ -45,7 +44,6 @@ In your `settings_shared.py` you will want to do something like:
 
     locals().update(common(project=project, base=base))
 
-    # which apps should jenkins include in coverage reports?
     PROJECT_APPS = [
         'yourapp.main',
     ]
