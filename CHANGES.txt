@@ -1,3 +1,7 @@
+0.4.5
+====================
+* Remove coverage
+
 0.4.4 (2025-03-20)
 ====================
 * Update storage settings to use Django's new STORAGES dictionary.

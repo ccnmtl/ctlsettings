@@ -12,7 +12,6 @@ setup(
     install_requires=[
         'django-cas-ng',
         'django-debug-toolbar',
-        'coverage',
         'django-smoketest',
         'django-extensions',
         'django-statsd-mozilla',
