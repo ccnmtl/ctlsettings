@@ -1,6 +1,7 @@
 0.4.5
 ====================
 * Remove coverage
+* Remove statsd, django-statsd-mozilla
 
 0.4.4 (2025-03-20)
 ====================

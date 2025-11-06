@@ -21,12 +21,10 @@ The following libraries are used in some way, so they'll need to be installed:
 * django-debug-toolbar
 * django-smoketest
 * django-extensions
-* django-statsd-mozilla
 * django-storages
 * django-impersonate
 * boto3
 * sentry-sdk
-* statsd
 * gunicorn
 
 ### Use it
