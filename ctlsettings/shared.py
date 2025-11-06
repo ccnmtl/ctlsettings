@@ -134,9 +134,6 @@ def common(**kwargs):
     ]
 
     MIDDLEWARE = [
-        'django_statsd.middleware.GraphiteRequestTimingMiddleware',
-        'django_statsd.middleware.GraphiteMiddleware',
-
         'django.middleware.security.SecurityMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.middleware.common.CommonMiddleware',
@@ -161,7 +158,6 @@ def common(**kwargs):
         'django.contrib.staticfiles',
         'django.contrib.messages',
         'django.contrib.admin',
-        'django_statsd',
         'smoketest',
         'gunicorn',
         'impersonate',
@@ -170,11 +166,6 @@ def common(**kwargs):
     ]
 
     INTERNAL_IPS = ['127.0.0.1']
-
-    STATSD_CLIENT = 'statsd.client'
-    STATSD_PREFIX = project
-    STATSD_HOST = 'localhost'
-    STATSD_PORT = 8125
 
     THUMBNAIL_SUBDIR = "thumbs"
     EMAIL_SUBJECT_PREFIX = "[" + project + "] "
