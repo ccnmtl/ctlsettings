@@ -39,9 +39,6 @@ def common(**kwargs):
     if s3static:
         # serve static files off S3
         AWS_STORAGE_BUCKET_NAME = s3prefix + "-" + project + "-static-prod"
-        AWS_S3_OBJECT_PARAMETERS = {
-            'ACL': 'public-read',
-        }
         STORAGES = {
             'default': {
                 'BACKEND': 'ctlsettings.storages.UploadsStorage',
