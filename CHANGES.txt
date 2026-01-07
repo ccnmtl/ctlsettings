@@ -2,6 +2,8 @@
 ====================
 * Removed dependency on django-stagingcontext
 * Updated S3Storage class locations for django-storages
+* django-storages: remove public-read ACL. ACLs are deprecated in
+  favor of bucket policies.
 
 0.4.5 (2025-11-06)
 ====================
