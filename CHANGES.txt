@@ -1,6 +1,7 @@
 0.4.6
 ====================
 * Removed dependency on django-stagingcontext
+* Updated S3Storage class locations for django-storages
 
 0.4.5 (2025-11-06)
 ====================

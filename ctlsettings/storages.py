@@ -1,7 +1,7 @@
-from storages.backends.s3boto3 import S3Boto3Storage, S3StaticStorage
+from storages.backends.s3 import S3Storage, S3StaticStorage
 
 
-class UploadsStorage(S3Boto3Storage):
+class UploadsStorage(S3Storage):
     location = 'uploads'
 
 
