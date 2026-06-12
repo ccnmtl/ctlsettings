@@ -94,7 +94,6 @@ def init_sentry(sentry_dsn: str) -> None:
         sentry_sdk.init(
             dsn=sentry_dsn,
             integrations=[DjangoIntegration()],
-            debug=True,
             environment='staging',
             traces_sample_rate=1.0,
         )
