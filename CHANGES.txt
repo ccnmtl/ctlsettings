@@ -1,3 +1,7 @@
+0.4.7
+====================
+* Turn off debug=True for sentry staging setup.
+
 0.4.6 (2026-01-07)
 ====================
 * Removed dependency on django-stagingcontext
