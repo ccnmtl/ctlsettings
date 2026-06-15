@@ -1,4 +1,4 @@
-0.4.7
+0.4.7 (2026-06-12)
 ====================
 * Turn off debug=True for sentry staging setup.
 
