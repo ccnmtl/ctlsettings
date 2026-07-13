@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='ctlsettings',
-    version='0.4.7',
+    version='0.4.8',
     author='Columbia University Center for Teaching and Learning',
     author_email='ctl-dev@columbia.edu',
     url='https://github.com/ccnmtl/ctlsettings',
@@ -20,6 +20,7 @@ setup(
         'requests',
         'gunicorn',
         'django-impersonate',
+        'djangorestframework'
     ],
     scripts=[],
     license='GPL-3.0-or-later',
