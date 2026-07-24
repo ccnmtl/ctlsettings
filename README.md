@@ -11,7 +11,7 @@ First, install it with
 
     $ pip install ctlsettings
 
-or add `ctlsettings==0.3.3` to your `requirements.txt`.
+or add `ctlsettings==0.4.8` to your `requirements.txt`.
 
 ### Dependencies
 
@@ -26,6 +26,7 @@ The following libraries are used in some way, so they'll need to be installed:
 * boto3
 * sentry-sdk
 * gunicorn
+* djangorestframework
 
 ### Use it
 
