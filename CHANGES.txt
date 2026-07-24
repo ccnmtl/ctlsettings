@@ -1,3 +1,7 @@
+0.4.9 (2026-07-24)
+====================
+* Added TURNSTILE_SITE_KEY to the context_processor
+
 0.4.8 (2026-07-24)
 ====================
 * Cloudflare compatible 'LoginAPIView' created in the new views.py

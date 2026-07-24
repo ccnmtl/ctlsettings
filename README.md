@@ -11,7 +11,7 @@ First, install it with
 
     $ pip install ctlsettings
 
-or add `ctlsettings==0.4.8` to your `requirements.txt`.
+or add `ctlsettings==0.4.9` to your `requirements.txt`.
 
 ### Dependencies
 
